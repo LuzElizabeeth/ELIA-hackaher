@@ -86,3 +86,69 @@
 .spin-once{animation:spin1 .8s ease-out}@keyframes spin1{to{transform:rotate(360deg)}}
 @media (max-width:1024px){.monitor-band,.tracking-grid,.integration-grid{grid-template-columns:1fr}.mini-map{position:static}}
 @media (max-width:640px){.evidence-slots,.tracking-card dl{grid-template-columns:1fr}.alert-row{grid-template-columns:16px minmax(0,1fr) auto}.alert-row .alert-folio,.alert-row .alert-time{display:none}.event-log li{grid-template-columns:52px 12px minmax(0,1fr)}.event-log li .source-badge{grid-column:3}.event-log li:not(:last-child):after{left:67px}.history-log li{grid-template-columns:1fr}.state-mapping>div{grid-template-columns:1fr 1fr}}
+
+/* Larger, more readable typography on the home dashboard. */
+.home-page h1{font-size:32px}
+.home-page .page-header p{font-size:14px}
+.home-page .eyebrow{font-size:11px}
+.home-page .home-date{font-size:12px}
+.home-page .header-actions a,.home-page .header-actions button{font-size:13px}
+.home-page .stat-label{font-size:12px}
+.home-page .stat-value{font-size:29px}
+.home-page .stat-note{font-size:11px}
+.home-page .map-panel-heading h2,.home-page .network-title h3{font-size:14px}
+.home-page .map-heading-note,.home-page .live-indicator{font-size:11px}
+.home-page .network-counts>div{font-size:12px}
+.home-page .network-counts strong{font-size:16px}
+.home-page .deliveries-title h3{font-size:13px}
+.home-page .next-delivery strong{font-size:12px}
+.home-page .next-delivery small{font-size:9px}
+.home-page .delivery-time,.home-page .network-link{font-size:11px}
+.home-page .section-title h2{font-size:16px}
+.home-page .section-title p{font-size:12px}
+.home-page .section-title a{font-size:11px}
+.home-page .attention-strip strong,.home-page .incident-item h3{font-size:12px}
+.home-page .attention-strip>div>span,.home-page .incident-item p{font-size:11px}
+.home-page .incident-meta{font-size:10px}
+@media(max-width:680px){
+ .home-page h1{font-size:27px}
+ .home-page .page-header p{font-size:13px}
+ .home-page .eyebrow{font-size:10px}
+ .home-page .header-actions a,.home-page .header-actions button{font-size:12px}
+ .home-page .stat-label{font-size:10px}
+ .home-page .stat-value{font-size:25px}
+ .home-page .stat-note{font-size:9px}
+ .home-page .map-panel-heading h2{font-size:12px}
+ .home-page .live-indicator{font-size:9px}
+ .home-page .network-counts>div{font-size:10px}
+ .home-page .deliveries-title h3{font-size:12px}
+ .home-page .next-delivery strong{font-size:11px}
+ .home-page .next-delivery small{font-size:9px}
+ .home-page .network-link{font-size:10px}
+ .home-page .section-title h2{font-size:15px}
+ .home-page .section-title p{font-size:11px}
+ .home-page .section-title a{font-size:10px}
+ .home-page .incident-item h3{font-size:11px}
+ .home-page .incident-item p{font-size:10px}
+ .home-page .incident-meta{font-size:9px}
+}
+.home-page .alert-row{grid-template-columns:20px minmax(0,1fr) auto auto auto;gap:14px;padding:15px 18px;font-size:13px}
+.home-page .alert-row>svg{width:18px;height:18px}
+.home-page .alert-row strong{font-size:14px}
+.home-page .alert-row small{font-size:13px;line-height:1.5;margin-top:4px}
+.home-page .alert-row .alert-time,.home-page .alert-row .alert-folio{font-size:12px}
+.home-page .alert-row .status-badge{font-size:11px;padding:6px 9px}
+.home-page .map-legend{font-size:11px;gap:18px}
+.home-page .map-legend .legend-node{font-size:11px}
+@media(max-width:680px){
+ .home-page .alert-row{grid-template-columns:18px minmax(0,1fr) auto;gap:10px;padding:13px 12px}
+ .home-page .alert-row>svg{width:16px;height:16px}
+ .home-page .alert-row strong{font-size:12px}
+ .home-page .alert-row small{font-size:11px}
+ .home-page .alert-row .status-badge{font-size:9px;padding:5px 7px}
+ .home-page .map-legend{font-size:9px;gap:10px}
+ .home-page .map-legend .legend-node{font-size:9px}
+}
+.home-page .monitor-band{grid-template-columns:minmax(0,1fr)}
+.home-page .monitor-alerts{grid-column:1 / -1;width:100%;min-width:0}
+.home-page .monitor-alerts .alert-list{width:100%}
