@@ -18,6 +18,11 @@ import { Route as MedicamentosRouteImport } from './routes/medicamentos'
 import { Route as OperadoresRouteImport } from './routes/operadores'
 import { Route as OperacionesIndexRouteImport } from './routes/operaciones.index'
 import { Route as OperacionesFolioRouteImport } from './routes/operaciones.$folio'
+import { Route as OperadorIndexRouteImport } from './routes/operador.index'
+import { Route as OperadorEvidenciasRouteImport } from './routes/operador.evidencias'
+import { Route as OperadorIncidenciasRouteImport } from './routes/operador.incidencias'
+import { Route as OperadorServiciosIndexRouteImport } from './routes/operador.servicios.index'
+import { Route as OperadorServiciosFolioRouteImport } from './routes/operador.servicios.$folio'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -64,6 +69,31 @@ const OperacionesFolioRoute = OperacionesFolioRouteImport.update({
   path: '/operaciones/$folio',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OperadorIndexRoute = OperadorIndexRouteImport.update({
+  id: '/operador/',
+  path: '/operador/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OperadorEvidenciasRoute = OperadorEvidenciasRouteImport.update({
+  id: '/operador/evidencias',
+  path: '/operador/evidencias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OperadorIncidenciasRoute = OperadorIncidenciasRouteImport.update({
+  id: '/operador/incidencias',
+  path: '/operador/incidencias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OperadorServiciosIndexRoute = OperadorServiciosIndexRouteImport.update({
+  id: '/operador/servicios/',
+  path: '/operador/servicios/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OperadorServiciosFolioRoute = OperadorServiciosFolioRouteImport.update({
+  id: '/operador/servicios/$folio',
+  path: '/operador/servicios/$folio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -74,7 +104,12 @@ export interface FileRoutesByFullPath {
   '/medicamentos': typeof MedicamentosRoute
   '/operadores': typeof OperadoresRoute
   '/operaciones/$folio': typeof OperacionesFolioRoute
+  '/operador/evidencias': typeof OperadorEvidenciasRoute
+  '/operador/incidencias': typeof OperadorIncidenciasRoute
   '/operaciones/': typeof OperacionesIndexRoute
+  '/operador/': typeof OperadorIndexRoute
+  '/operador/servicios/$folio': typeof OperadorServiciosFolioRoute
+  '/operador/servicios/': typeof OperadorServiciosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -85,7 +120,12 @@ export interface FileRoutesByTo {
   '/medicamentos': typeof MedicamentosRoute
   '/operadores': typeof OperadoresRoute
   '/operaciones/$folio': typeof OperacionesFolioRoute
+  '/operador/evidencias': typeof OperadorEvidenciasRoute
+  '/operador/incidencias': typeof OperadorIncidenciasRoute
   '/operaciones': typeof OperacionesIndexRoute
+  '/operador': typeof OperadorIndexRoute
+  '/operador/servicios/$folio': typeof OperadorServiciosFolioRoute
+  '/operador/servicios': typeof OperadorServiciosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -97,7 +137,12 @@ export interface FileRoutesById {
   '/medicamentos': typeof MedicamentosRoute
   '/operadores': typeof OperadoresRoute
   '/operaciones/$folio': typeof OperacionesFolioRoute
+  '/operador/evidencias': typeof OperadorEvidenciasRoute
+  '/operador/incidencias': typeof OperadorIncidenciasRoute
   '/operaciones/': typeof OperacionesIndexRoute
+  '/operador/': typeof OperadorIndexRoute
+  '/operador/servicios/$folio': typeof OperadorServiciosFolioRoute
+  '/operador/servicios/': typeof OperadorServiciosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -110,7 +155,12 @@ export interface FileRouteTypes {
     | '/medicamentos'
     | '/operadores'
     | '/operaciones/$folio'
+    | '/operador/evidencias'
+    | '/operador/incidencias'
     | '/operaciones/'
+    | '/operador/'
+    | '/operador/servicios/$folio'
+    | '/operador/servicios/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -121,7 +171,12 @@ export interface FileRouteTypes {
     | '/medicamentos'
     | '/operadores'
     | '/operaciones/$folio'
+    | '/operador/evidencias'
+    | '/operador/incidencias'
     | '/operaciones'
+    | '/operador'
+    | '/operador/servicios/$folio'
+    | '/operador/servicios'
   id:
     | '__root__'
     | '/'
@@ -132,7 +187,12 @@ export interface FileRouteTypes {
     | '/medicamentos'
     | '/operadores'
     | '/operaciones/$folio'
+    | '/operador/evidencias'
+    | '/operador/incidencias'
     | '/operaciones/'
+    | '/operador/'
+    | '/operador/servicios/$folio'
+    | '/operador/servicios/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -144,7 +204,12 @@ export interface RootRouteChildren {
   MedicamentosRoute: typeof MedicamentosRoute
   OperadoresRoute: typeof OperadoresRoute
   OperacionesFolioRoute: typeof OperacionesFolioRoute
+  OperadorEvidenciasRoute: typeof OperadorEvidenciasRoute
+  OperadorIncidenciasRoute: typeof OperadorIncidenciasRoute
   OperacionesIndexRoute: typeof OperacionesIndexRoute
+  OperadorIndexRoute: typeof OperadorIndexRoute
+  OperadorServiciosFolioRoute: typeof OperadorServiciosFolioRoute
+  OperadorServiciosIndexRoute: typeof OperadorServiciosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -212,6 +277,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OperacionesFolioRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/operador/': {
+      id: '/operador/'
+      path: '/operador'
+      fullPath: '/operador/'
+      preLoaderRoute: typeof OperadorIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/operador/evidencias': {
+      id: '/operador/evidencias'
+      path: '/operador/evidencias'
+      fullPath: '/operador/evidencias'
+      preLoaderRoute: typeof OperadorEvidenciasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/operador/incidencias': {
+      id: '/operador/incidencias'
+      path: '/operador/incidencias'
+      fullPath: '/operador/incidencias'
+      preLoaderRoute: typeof OperadorIncidenciasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/operador/servicios/': {
+      id: '/operador/servicios/'
+      path: '/operador/servicios'
+      fullPath: '/operador/servicios/'
+      preLoaderRoute: typeof OperadorServiciosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/operador/servicios/$folio': {
+      id: '/operador/servicios/$folio'
+      path: '/operador/servicios/$folio'
+      fullPath: '/operador/servicios/$folio'
+      preLoaderRoute: typeof OperadorServiciosFolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -224,7 +324,12 @@ const rootRouteChildren: RootRouteChildren = {
   MedicamentosRoute: MedicamentosRoute,
   OperadoresRoute: OperadoresRoute,
   OperacionesFolioRoute: OperacionesFolioRoute,
+  OperadorEvidenciasRoute: OperadorEvidenciasRoute,
+  OperadorIncidenciasRoute: OperadorIncidenciasRoute,
   OperacionesIndexRoute: OperacionesIndexRoute,
+  OperadorIndexRoute: OperadorIndexRoute,
+  OperadorServiciosFolioRoute: OperadorServiciosFolioRoute,
+  OperadorServiciosIndexRoute: OperadorServiciosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -10,6 +10,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import { Navbar, AppFooter } from "@/components/elia/navbar";
+import { RoleProvider } from '@/lib/elia-role';
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -121,9 +122,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Navbar />
-      <main className="app-main"><Outlet /></main>
-      <AppFooter />
+      <RoleProvider>
+        <Navbar />
+
+        <main className="app-main">
+          <Outlet />
+        </main>
+
+        <AppFooter />
+      </RoleProvider>
     </QueryClientProvider>
   );
 }

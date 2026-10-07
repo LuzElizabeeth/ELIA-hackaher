@@ -1,6 +1,6 @@
 export type Operation = { folio: string; origin: string; destination: string; operator: string; initials: string; progress: number; date: string; time: string; status: string; route: string };
 export const operations: [Operation, Operation, Operation, Operation, Operation, Operation] = [
- { folio:'ELIA-2026-00482',origin:'Ciudad de México',destination:'Hospital General Cancún',operator:'Carlos Mendoza',initials:'CM',progress:68,date:'07 oct 2026',time:'16:30 h',status:'En ruta',route:'CDMX → Cancún' },
+ { folio:'ELIA-2026-00482',origin:'Ciudad de México',destination:'Hospital General Cancún',operator:'Miguel Mendoza',initials:'CM',progress:68,date:'07 oct 2026',time:'16:30 h',status:'En ruta',route:'CDMX → Cancún' },
  { folio:'ELIA-2026-00481',origin:'Guadalajara',destination:'Hospital Universitario Monterrey',operator:'Ana Martínez',initials:'AM',progress:42,date:'07 oct 2026',time:'17:45 h',status:'En ruta',route:'Guadalajara → Monterrey' },
  { folio:'ELIA-2026-00480',origin:'Ciudad de México',destination:'Hospital Regional Veracruz',operator:'Roberto Sánchez',initials:'RS',progress:81,date:'07 oct 2026',time:'14:15 h',status:'Atención',route:'CDMX → Veracruz' },
  { folio:'ELIA-2026-00479',origin:'Villahermosa',destination:'Hospital General Mérida',operator:'Luis Hernández',initials:'LH',progress:56,date:'07 oct 2026',time:'15:00 h',status:'Retrasada',route:'Villahermosa → Mérida' },
@@ -24,10 +24,10 @@ export const medicines = [
 ];
 export const evidence = [
  {name:'Acta de recepción',format:'PDF · 248 KB',category:'Recepción',folio:'ELIA-2026-00478',operator:'María López',location:'Hospital General Puebla',date:'07 oct 2026 · 11:20 h'},
- {name:'Registro de recolección',format:'JPG · 1.8 MB',category:'Fotografías',folio:'ELIA-2026-00482',operator:'Carlos Mendoza',location:'Almacén central CDMX',date:'07 oct 2026 · 06:45 h'},
+ {name:'Registro de recolección',format:'JPG · 1.8 MB',category:'Fotografías',folio:'ELIA-2026-00482',operator:'Miguel Mendoza',location:'Almacén central CDMX',date:'07 oct 2026 · 06:45 h'},
  {name:'Firma de entrega',format:'PDF · 124 KB',category:'Firmas',folio:'ELIA-2026-00477',operator:'Jorge Ramírez',location:'Hospital General Cancún',date:'07 oct 2026 · 10:45 h'},
  {name:'Reporte de temperatura',format:'PDF · 312 KB',category:'Incidencias',folio:'ELIA-2026-00479',operator:'Luis Hernández',location:'Campeche, Campeche',date:'07 oct 2026 · 12:18 h'},
- {name:'Salida de almacén',format:'JPG · 2.1 MB',category:'Fotografías',folio:'ELIA-2026-00482',operator:'Carlos Mendoza',location:'Almacén central CDMX',date:'07 oct 2026 · 07:10 h'},
+ {name:'Salida de almacén',format:'JPG · 2.1 MB',category:'Fotografías',folio:'ELIA-2026-00482',operator:'Miguel Mendoza',location:'Almacén central CDMX',date:'07 oct 2026 · 07:10 h'},
 ];
 export function pageMeta(title: string, description: string) { return {meta:[{title:`${title} | ELIA`},{name:'description',content:description},{property:'og:title',content:`${title} | ELIA`},{property:'og:description',content:description},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary_large_image'}]}; }
 
